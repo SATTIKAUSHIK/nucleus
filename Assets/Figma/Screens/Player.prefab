@@ -300,7 +300,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 99, y: 45}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2384540997736375511
 MonoBehaviour:
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281348144
   m_fontColor: {r: 0.1875, g: 0.1875, b: 0.1875, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -471,7 +471,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 197, y: 45}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3361718147642021608
 MonoBehaviour:
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281348144
   m_fontColor: {r: 0.1875, g: 0.1875, b: 0.1875, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -713,6 +713,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8298182071904020249}
     m_Modifications:
+    - target: {fileID: 2050657979509934986, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283255883
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050657979509934986, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060336256355079998, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060336256355079998, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255212372519277773, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394042099068544503, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283255883
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394042099068544503, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 3578764111661982294, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -800,6 +828,22 @@ PrefabInstance:
     - target: {fileID: 3971782063980382733, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
       propertyPath: m_Name
       value: 'Player '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923740104029979081, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923740104029979081, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666062599688863100, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666062599688863100, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa085bb315c06684aa5cb3625aee95f6, type: 3}

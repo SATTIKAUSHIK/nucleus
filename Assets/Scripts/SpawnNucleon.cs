@@ -16,7 +16,7 @@ public class SpawnNucleon : MonoBehaviour
     public GameObject neutron;
     Stack<GameObject> protonStack = new Stack<GameObject>();
     Stack<GameObject> neutronStack = new Stack<GameObject>();
-    private int count = 0,protonCount =0,neutronCount =0;
+    public int count = 0,protonCount =0,neutronCount =0;
     public List<GameObject> spawnPoints = new List<GameObject>();
 
 
@@ -107,31 +107,23 @@ public class SpawnNucleon : MonoBehaviour
         {
             return true;
         }
-        else if (protonCount == 1 && neutronCount >= 1 && neutronCount <= 6)
+        else if (neutronCount == 1 && protonCount >=1 && protonCount<3)
         {
             return true;
         }
-        else if (protonCount == 2 && neutronCount >= 1 && neutronCount <= 8)
+        else if (neutronCount == 2 && protonCount >= 1 && protonCount < 6)
         {
             return true;
         }
-        else if (protonCount == 3 && neutronCount <= 9 && neutronCount >= 1)
+        else if (neutronCount == 3 && protonCount >= 1 && protonCount < 8)
         {
             return true;
         }
-        else if (protonCount >= 4 && protonCount <= 6 && neutronCount >= 2)
+        else if (neutronCount == 4 && protonCount >= 1 && protonCount < 9)
         {
             return true;
         }
-        else if (protonCount >= 6 && protonCount <= 8 && neutronCount >= 3)
-        {
-            return true;
-        }
-        else if (protonCount == 9 && neutronCount >= 4)
-        {
-            return true;
-        }
-        else if (protonCount >= 9 && neutronCount >= 5)
+        else if (neutronCount >= 5 && protonCount >= 1 && protonCount < 10)
         {
             return true;
         }
@@ -191,29 +183,17 @@ public class SpawnNucleon : MonoBehaviour
         //{
         //    return false;
         //}
-        if (protonCount == 2 && neutronCount == 1 )
+        if (protonCount == 2 && neutronCount >6)
         {
-            return true;
+            return false ;
         }
-        else if (protonCount == 3 && neutronCount == 1)
+        else if (protonCount == 3 && neutronCount == 9)
         {
-            return true;
+            return false;
         }
-        else if (protonCount >= 4 && protonCount == 2)
+        else if (protonCount == 4 && protonCount > 9)
         {
-            return true;
-        }
-        else if (protonCount >= 6 && protonCount == 3)
-        {
-            return true;
-        }
-        else if (protonCount == 9 && neutronCount == 4)
-        {
-            return true;
-        }
-        else if (protonCount >= 9 && neutronCount == 5)
-        {
-            return true;
+            return false;
         }
         else
         {
@@ -226,23 +206,23 @@ public class SpawnNucleon : MonoBehaviour
 
     public Boolean neutronDestroyCheck()
     {
-        if(neutronCount == 1 && protonCount <=3 )
+        if(neutronCount == 1 && protonCount <= 3 && protonCount > 1)
         {
             return false;
         }
-        else if(neutronCount == 2 && protonCount <= 6  && protonCount>3)
+        else if(neutronCount == 2 && protonCount>3)
         {
             return false;
         }
-        else if (neutronCount == 3 && protonCount <= 8 && protonCount > 6)
+        else if (neutronCount == 3 && protonCount > 6)
         {
             return false;
         }
-        else if (neutronCount ==4  && protonCount <= 10 && protonCount > 8)
+        else if (neutronCount ==4  && protonCount == 9)
         {
             return false;
         }
-        else if (neutronCount == 5 && protonCount <= 6 && protonCount > 3)
+        else if (neutronCount == 5 && protonCount == 10)
         {
             return false;
         }
