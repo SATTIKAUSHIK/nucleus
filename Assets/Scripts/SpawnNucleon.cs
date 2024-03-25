@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,10 +11,10 @@ using UnityEngine.UI;
 
 public class SpawnNucleon : MonoBehaviour
 {
-    //private GameObject protonButton;
-    //private GameObject neutronButton;
-    //private GameObject protonDestroyer;
-    //private GameObject neutronDestroyer;
+    private GameObject protonButton;
+    private GameObject neutronButton;
+    private GameObject protonDestroyer;
+    private GameObject neutronDestroyer;
     public GameObject proton;
     public GameObject neutron;
     public EnergyLevels energyLevels;
@@ -27,12 +28,12 @@ public class SpawnNucleon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject[] protonButtons = GameObject.FindGameObjectsWithTag("proton");
-        //GameObject[] neutronButtons = GameObject.FindGameObjectsWithTag("neutron");
-        //protonButton = protonButtons[0];
-        //neutronButton = neutronButtons[0];
-        //protonDestroyer = protonButtons[1];
-        //neutronDestroyer = neutronButtons[1];
+        GameObject[] protonButtons = GameObject.FindGameObjectsWithTag("proton");
+        GameObject[] neutronButtons = GameObject.FindGameObjectsWithTag("neutron");
+        protonButton = protonButtons[0];
+        neutronButton = neutronButtons[0];
+        protonDestroyer = protonButtons[1];
+        neutronDestroyer = neutronButtons[1];
 
 
     }
