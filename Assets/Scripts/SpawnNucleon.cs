@@ -3,33 +3,38 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpawnNucleon : MonoBehaviour
 {
-    private GameObject protonButton;
-    private GameObject neutronButton;
-    private GameObject protonDestroyer;
-    private GameObject neutronDestroyer;
+    //private GameObject protonButton;
+    //private GameObject neutronButton;
+    //private GameObject protonDestroyer;
+    //private GameObject neutronDestroyer;
     public GameObject proton;
     public GameObject neutron;
+    public EnergyLevels energyLevels;
     Stack<GameObject> protonStack = new Stack<GameObject>();
     Stack<GameObject> neutronStack = new Stack<GameObject>();
     public int count = 0,protonCount =0,neutronCount =0;
     public List<GameObject> spawnPoints = new List<GameObject>();
+    internal bool exists = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] protonButtons = GameObject.FindGameObjectsWithTag("proton");
-        GameObject[] neutronButtons = GameObject.FindGameObjectsWithTag("neutron");
-        protonButton = protonButtons[0];
-        neutronButton = neutronButtons[0];
-        protonDestroyer = protonButtons[1];
-        neutronDestroyer = neutronButtons[1];
-        
+        //GameObject[] protonButtons = GameObject.FindGameObjectsWithTag("proton");
+        //GameObject[] neutronButtons = GameObject.FindGameObjectsWithTag("neutron");
+        //protonButton = protonButtons[0];
+        //neutronButton = neutronButtons[0];
+        //protonDestroyer = protonButtons[1];
+        //neutronDestroyer = neutronButtons[1];
+
+
     }
 
     // Update is called once per frame
@@ -46,13 +51,19 @@ public class SpawnNucleon : MonoBehaviour
             {
                 Transform protonTransform = spawnPoints[count].transform;
                 var copy = Instantiate(proton, protonTransform);
+                energyLevels.addProton();
                 count++;
                 protonStack.Push(copy);
                 protonCount++;
+                exists = true;
             }
             else
             {
-                Debug.Log("Invalid Combination");
+                exists = false;
+                //protonButton.GetComponent<Image>().color = Color.gray;
+                //Thread.Sleep(3000);
+                //exists = true;
+
             }
         }
         
@@ -63,16 +74,25 @@ public class SpawnNucleon : MonoBehaviour
         {
             if (neutronCount >= 0 && neutronCount < 12)
             {
+                //neutronButton.GetComponent<Image>().color = Color.white;
                 Transform neutronTransform = spawnPoints[count].transform;
                 var copy = Instantiate(neutron, neutronTransform);
+                energyLevels.addNeutron();
                 count++;
                 neutronStack.Push(copy);
                 neutronCount++;
+      
+                exists = true;
+                
             }
         }
         else
         {
-            Debug.Log("Invalid");
+            
+            exists = false;
+            //neutronButton.GetComponent<Image>().color = Color.gray;
+            //Thread.Sleep(3000);
+            //exists = true;
         }
     }
 
@@ -83,9 +103,16 @@ public class SpawnNucleon : MonoBehaviour
             if (protonCount > 0)
             {
                 Destroy(protonStack.Pop());
+                energyLevels.destroyProton();
                 count--;
                 protonCount--;
+                
+                exists = true;
             }
+        }
+        else
+        {
+            //protonDestroyer.GetComponent<Image>().color = Color.gray;
         }
     }
     public void destroyNeutron()
@@ -94,10 +121,17 @@ public class SpawnNucleon : MonoBehaviour
         {
             if (neutronCount > 0)
             {
+                //neutronDestroyer.GetComponent<Image>().color = Color.white;
                 Destroy(neutronStack.Pop());
+                energyLevels.destroyNeutron();
                 count--;
                 neutronCount--;
+                
+                exists = true;
             }
+        }
+        else { 
+            
         }
     }
 
