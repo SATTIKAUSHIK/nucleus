@@ -214,11 +214,12 @@ public class SpawnNucleon : MonoBehaviour
         //{
         //    return false;
         //}
-        //else if (protonCount == 1 && neutronCount == 1)
-        //{
-        //    return false;
-        //}
-        if (protonCount == 2 && neutronCount >6)
+        if (protonCount == 1 && neutronCount > 1)
+        {
+            return false;
+        }
+
+            if (protonCount == 2 && neutronCount >6)
         {
             return false ;
         }
